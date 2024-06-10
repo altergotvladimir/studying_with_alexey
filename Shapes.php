@@ -16,30 +16,34 @@ class Shape
 
 class Circle extends Shape
 {
-    public string $color = 'green';
-    public int $radius = 5;
-    public function areaCalculation($radius)
+    public string $color;
+    public int $radius;
+    public function areaCalculation()
     {
-        $this->area = pi()*$radius**2;
-        echo $this->area . "\n";
+        $this->area = pi()*$this->radius**2;
+        return $this->area . "\n";
     }
 }
 
 class Square extends Shape
 {
-    public string $color = 'blue';
-    public int $side = 4;
-    public function areaCalculation($side)
+    public string $color;
+    public int $side;
+    public function areaCalculation()
     {
-        $this->area = $side**2;
-        echo $this->area . "\n";
+        $this->area = $this->side**2;
+        return $this->area . "\n";
     }
 }
 
 $square = new Square();
+$square->color = 'green';
+$square->side = 9;
 echo $square->color . "\n";
-$square->areaCalculation($square->side);
+echo $square->areaCalculation();
 
 $circle = new Circle();
+$circle->color = 'blue';
+$circle->radius = 5;
 echo $circle->color . "\n";
-$circle->areaCalculation($circle->radius);
+echo $circle->areaCalculation();
